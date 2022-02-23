@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Super Constructor</title>
+</head>
+<body>
+    
+   <script>
+
+    class Employee{
+       
+       constructor(firstName){
+           this.firstName = firstName;
+
+       }
+
+        sayHello(name) {
+            console.info(`Hello ${name}, my name is employee ${this.firstName}`);
+        }
+    }
+
+
+    // disini fungsi nya extends agar class manager bisa mewarisi apa yang di punya clas employee
+    class Manager extends Employee{
+
+        constructor(firstName, lastName){
+            //super berfungsi untuk memanggil paramter yang telah di warisi di class employee
+            super(firstName);
+            this.lastName = lastName;
+        }
+
+        sayHello(name) {
+            console.info(`Hello ${name}, my name is manager ${this.firstName} ${this.lastName}`);
+        }
+    }
+
+    
+
+
+    const rizki = new Employee("rizki");
+    rizki.sayHello("Joko");
+
+    const mahendra = new Manager("Mahendra", "Aja");
+    mahendra.sayHello("Joko")
+
+    console.info(rizki);
+    console.info(mahendra);
+
+
+   </script>
+
+
+</body>
+</html>

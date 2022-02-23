@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Classs</title>
+</head>
+<body>
+    
+   <script>
+
+    class Employee{
+       
+        sayHello(name) {
+            console.info(`Hello ${name}, my name is employee ${this.name}`);
+        }
+    }
+
+
+    // disini fungsi nya extends agar class manager bisa mewarisi apa yang di punya clas employee
+    class Manager extends Employee{
+
+        sayHello(name) {
+            console.info(`Hello ${name}, my name is manager ${this.name}`);
+        }
+    }
+
+
+    const rizki = new Employee();
+    rizki.name = "Rizki";
+    rizki.sayHello("Joko");
+
+    const mahendra = new Manager();
+    mahendra.name = "Mahendra";
+    mahendra.sayHello("Joko")
+
+    console.info(rizki);
+    console.info(mahendra);
+
+
+   </script>
+
+
+</body>
+</html>
